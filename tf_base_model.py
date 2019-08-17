@@ -399,9 +399,9 @@ class TFBaseModel(object):
             self.loss = self.calculate_loss()
             self.update_parameters(self.loss)
 
-            self.saver = tf.train.Saver(max_to_keep=1)
+            self.saver = tf.train.Saver(max_to_keep=1,keep_checkpoint_every_n_hours=0.5)
             if self.enable_parameter_averaging:
-                self.saver_averaged = tf.train.Saver(self.ema.variables_to_restore(), max_to_keep=1)
+                self.saver_averaged = tf.train.Saver(self.ema.variables_to_restore(), max_to_keep=1,keep_checkpoint_every_n_hours=0.5)
 
             self.init = tf.global_variables_initializer()
             return graph

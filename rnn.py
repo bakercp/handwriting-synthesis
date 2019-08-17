@@ -221,7 +221,7 @@ if __name__ == '__main__':
         validation_batch_size=32,
         optimizer='rms',
         num_training_steps=100000,
-        warm_start_init_step=0,
+        warm_start_init_step=2860,
         regularization_constant=0.0,
         keep_prob=1.0,
         enable_parameter_averaging=False,
